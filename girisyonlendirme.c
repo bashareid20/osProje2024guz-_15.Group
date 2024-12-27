@@ -16,6 +16,8 @@ void execute_command(char **args) {
             return;
         }
     }
+int pipefd[2];
+pipe(pipefd); // pipefd[0]: read ucu, pipefd[1]: write ucu
 
     pid = fork();
     if (pid < 0) {
