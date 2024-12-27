@@ -1,4 +1,10 @@
-/* --------------------------------------------------------------------------
+/* 
+	BASHAR EID G221210585    2.C
+	SHHADA AL HARIRI G221210574     2.A 
+	Hasan Abdulhay G201210585 1.C
+	Abdullah mulle hamid B211210577 1.A  
+	ABDULRAHMAN ALJANADI G211210551  2.B
+	--------------------------------------------------------------------------
  * Basit bir kabuk (shell) uygulaması:
  *  - Prompt: >
  *  - Built-in komutlar: cd, help, quit
