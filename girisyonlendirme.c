@@ -16,8 +16,12 @@ void execute_command(char **args) {
             return;
         }
     }
-int pipefd[2];
-pipe(pipefd); // pipefd[0]: read ucu, pipefd[1]: write ucu
+    int pipefd[2];
+    pipe(pipefd); // pipefd[0]: read ucu, pipefd[1]: write ucu
+
+    dup2(pipefd[1], STDOUT_FILENO); // stdout'u borunun yazma ucuna yönlendir
+    dup2(pipefd[0], STDIN_FILENO);  // stdin'i borunun okuma ucuna yönlendir
+
 
     pid = fork();
     if (pid < 0) {
