@@ -1,17 +1,20 @@
 HEADERS = shell.h
+SOURCES = shell.c
 OBJECTS = shell.o
+TARGET  = shell
+CC      = gcc
+CFLAGS  = -Wall -g
 
-default: shell
+default: $(TARGET)
 
 %.o: %.c $(HEADERS)
-	gcc -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-shell: $(OBJECTS)
-	gcc $(OBJECTS) -o $@
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
 clean:
-	-rm -f $(OBJECTS)
-	-rm -f shell
+	rm -f $(OBJECTS) $(TARGET)
 
-run: shell
-	./shell
+run: $(TARGET)
+	./$(TARGET)
